@@ -6,12 +6,15 @@
     cacheDirectory="tmp/phpunit.cache"
     colors="true"
 >
+    <php>
+        <ini name="error_reporting" value="E_ALL" />
+    </php>
     <testsuites>
         <testsuite name="e2e">
-            <directory suffix="Test.php">tests/e2e/cases</directory>
+            <directory suffix="Test.php">tests/e2e</directory>
         </testsuite>
         <testsuite name="unit">
-            <directory suffix="Test.php">tests/unit/cases</directory>
+            <directory suffix="Test.php">tests/unit</directory>
         </testsuite>
     </testsuites>
     <source>

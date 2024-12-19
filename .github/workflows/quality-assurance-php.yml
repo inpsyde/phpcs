@@ -39,7 +39,7 @@ jobs:
                 php-version: [ '8.1', '8.2', '8.3', '8.4' ]
         with:
             PHP_VERSION: ${{ matrix.php-version }}
-            LINT_ARGS: '-e php --colors --show-deprecated ./Syde ./tests --exclude ./tests/unit/fixtures/return-type-declaration.php'
+            LINT_ARGS: '-e php --colors --show-deprecated ./Syde ./tests --exclude ./tests/fixtures/return-type-declaration.php'
 
     coding-standards-analysis-php:
         if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run PHPCS only') || (github.event.inputs.jobs == 'Run static analysis')) }}

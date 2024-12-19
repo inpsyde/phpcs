@@ -1,6 +1,10 @@
 {
     "index.php": [
         {
+            "source": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+            "line": 11
+        },
+        {
             "source": "Syde.ControlStructures.DisallowElse.ElseFound",
             "line": 12
         },
@@ -10,6 +14,10 @@
         }
     ],
     "template.php": [
+        {
+            "source": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+            "line": 11
+        },
         {
             "source": "WordPress.Security.EscapeOutput.OutputNotEscaped",
             "line": 13
