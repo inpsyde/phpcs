@@ -4,7 +4,7 @@ parameters:
         - Syde/
         - tests/
     excludePaths:
-      - tests/fixtures/*
+        - tests/fixtures/*
     bootstrapFiles:
         - vendor/squizlabs/php_codesniffer/autoload.php
         - vendor/squizlabs/php_codesniffer/src/Util/Tokens.php
