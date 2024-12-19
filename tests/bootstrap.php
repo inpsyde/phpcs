@@ -12,7 +12,7 @@ if (!is_readable($autoload)) {
 
 putenv("LIB_PATH={$libDir}");
 putenv('SNIFFS_NAMESPACE=SydeCS\\Syde\\Sniffs');
-putenv("FIXTURES_PATH={$testsDir}/unit/fixtures");
+putenv("FIXTURES_PATH={$testsDir}/fixtures");
 
 if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
     define('PHPUNIT_COMPOSER_INSTALL', $autoload);
@@ -22,5 +22,3 @@ if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
 require_once "{$testsDir}/autoload.php";
 
 unset($libDir, $testsDir, $autoload);
-
-error_reporting(E_ALL);

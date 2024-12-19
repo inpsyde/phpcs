@@ -14,9 +14,9 @@
     <config name="testVersion" value="8.1-" />
 
     <file>./Syde</file>
-    <file>./tests/e2e/cases</file>
-    <file>./tests/src</file>
-    <file>./tests/unit/cases</file>
+    <file>./tests</file>
+    <exclude-pattern>*/tests/e2e/test-package/*</exclude-pattern>
+    <exclude-pattern>*/tests/fixtures/*</exclude-pattern>
 
     <!-- Use colors, and show sniff error codes and progress. -->
     <arg name="colors" />
@@ -29,9 +29,9 @@
             <property name="rootNamespaces" type="array">
                 <element key="Syde/Helpers" value="SydeCS\Syde\Helpers" />
                 <element key="Syde/Sniffs" value="SydeCS\Syde\Sniffs" />
-                <element key="tests/e2e/cases" value="SydeCS\Syde\Tests" />
+                <element key="tests/e2e" value="SydeCS\Syde\Tests" />
                 <element key="tests/src" value="SydeCS\Syde\Tests" />
-                <element key="tests/unit/cases" value="SydeCS\Syde\Tests" />
+                <element key="tests/unit" value="SydeCS\Syde\Tests" />
             </property>
         </properties>
     </rule>
@@ -49,13 +49,19 @@
     </rule>
 
     <rule ref="Syde.Functions.FunctionLength">
-        <exclude-pattern>/tests/unit/cases/*</exclude-pattern>
+        <exclude-pattern>/tests/unit/*</exclude-pattern>
     </rule>
 
     <rule ref="WordPress.Security.EscapeOutput.ExceptionNotEscaped">
         <exclude-pattern>/tests/*</exclude-pattern>
     </rule>
 
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+        <exclude-pattern>/tests/bootstrap.php</exclude-pattern>
+    </rule>
+    <rule ref="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv">
+        <exclude-pattern>/tests/bootstrap.php</exclude-pattern>
+    </rule>
     <rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_fclose">
         <exclude-pattern>/tests/src/FixtureContentParser.php</exclude-pattern>
     </rule>

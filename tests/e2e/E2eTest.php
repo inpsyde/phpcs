@@ -25,7 +25,7 @@ class E2eTest extends TestCase
         $libPath = (string) getenv('LIB_PATH');
 
         self::$phpCsBinary = $libPath . '/vendor/bin/phpcs';
-        self::$testPackagePath = $libPath . '/tests/e2e/fixtures/test-package';
+        self::$testPackagePath = $libPath . '/tests/e2e/test-package';
     }
 
     /**

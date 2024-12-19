@@ -44,9 +44,9 @@
     "autoload-dev": {
         "psr-4": {
             "SydeCS\\Syde\\Tests\\": [
-                "tests/e2e/cases",
+                "tests/e2e/",
                 "tests/src/",
-                "tests/unit/cases"
+                "tests/unit/"
             ]
         }
     },

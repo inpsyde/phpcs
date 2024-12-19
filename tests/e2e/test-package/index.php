@@ -8,7 +8,7 @@ $successMessage = 'Success!';
 $errorMessage = 'Error!';
 
 if ($value > 3) {
-    echo esc_html($successMessage);
+    echo $successMessage;
 } else {
     echo $errorMessage;
 }
