@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+    name="Syde"
+>
+
+    <description>A collection of custom sniffs for WordPress projects. This standard is not designed to be used to check code. Include individual sniffs from this standard in a custom ruleset instead, or reference one or more of the other standards included in this package.</description>
+
+</ruleset>

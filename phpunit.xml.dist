@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    cacheDirectory="tmp/phpunit.cache"
+    colors="true"
+>
+    <testsuites>
+        <testsuite name="e2e">
+            <directory suffix="Test.php">tests/e2e/cases</directory>
+        </testsuite>
+        <testsuite name="unit">
+            <directory suffix="Test.php">tests/unit/cases</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">Syde</directory>
+        </include>
+    </source>
+    <coverage>
+        <report>
+            <clover outputFile="tmp/coverage.xml" />
+            <html outputDirectory="tmp/coverage" />
+            <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="true" />
+        </report>
+    </coverage>
+</phpunit>

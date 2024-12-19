@@ -1,0 +1,26 @@
+{
+    "index.php": [
+        {
+            "source": "Syde.ControlStructures.DisallowElse.ElseFound",
+            "line": 12
+        },
+        {
+            "source": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+            "line": 13
+        }
+    ],
+    "template.php": [
+        {
+            "source": "WordPress.Security.EscapeOutput.OutputNotEscaped",
+            "line": 13
+        },
+        {
+            "source": "Syde.Formatting.TrailingSemicolon.Found",
+            "line": 13
+        },
+        {
+            "source": "Syde.Functions.DisallowCallUserFunc.call_user_func_call_user_func",
+            "line": 16
+        }
+    ]
+}

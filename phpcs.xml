@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+    name="Syde-PHPCS"
+>
+
+    <description>The coding standard for the Syde PHP Coding Standards package itself.</description>
+
+    <!-- Report warnings, but return zero exit code. -->
+    <config name="ignore_warnings_on_exit" value="1" />
+
+    <!-- Check for cross-version support for PHP 8.1 and higher. -->
+    <config name="testVersion" value="8.1-" />
+
+    <file>./Syde</file>
+    <file>./tests/e2e/cases</file>
+    <file>./tests/src</file>
+    <file>./tests/unit/cases</file>
+
+    <!-- Use colors, and show sniff error codes and progress. -->
+    <arg name="colors" />
+    <arg value="sp" />
+
+    <rule ref="Syde-Extra" />
+
+    <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
+        <properties>
+            <property name="rootNamespaces" type="array">
+                <element key="Syde/Helpers" value="SydeCS\Syde\Helpers" />
+                <element key="Syde/Sniffs" value="SydeCS\Syde\Sniffs" />
+                <element key="tests/e2e/cases" value="SydeCS\Syde\Tests" />
+                <element key="tests/src" value="SydeCS\Syde\Tests" />
+                <element key="tests/unit/cases" value="SydeCS\Syde\Tests" />
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="Syde.Classes.DisallowGetterSetter">
+        <exclude-pattern>/Syde/Sniffs/Functions/DisallowCallUserFuncSniff.php</exclude-pattern>
+    </rule>
+
+    <rule ref="Syde.Functions.ArgumentTypeDeclaration">
+        <properties>
+            <property name="allowedMethodNames" type="array">
+                <element value="process" />
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="Syde.Functions.FunctionLength">
+        <exclude-pattern>/tests/unit/cases/*</exclude-pattern>
+    </rule>
+
+    <rule ref="WordPress.Security.EscapeOutput.ExceptionNotEscaped">
+        <exclude-pattern>/tests/*</exclude-pattern>
+    </rule>
+
+    <rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_fclose">
+        <exclude-pattern>/tests/src/FixtureContentParser.php</exclude-pattern>
+    </rule>
+    <rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_fopen">
+        <exclude-pattern>/tests/src/FixtureContentParser.php</exclude-pattern>
+    </rule>
+
+</ruleset>

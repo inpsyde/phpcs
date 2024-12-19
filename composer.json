@@ -1,0 +1,83 @@
+{
+    "name": "syde/phpcs",
+    "description": "Syde PHP coding standards for WordPress projects.",
+    "license": "GPL-2.0-or-later",
+    "type": "phpcodesniffer-standard",
+    "keywords": [
+        "phpcs",
+        "coding standards",
+        "static analysis",
+        "WordPress",
+        "Inpsyde",
+        "Syde"
+    ],
+    "authors": [
+        {
+            "name": "Syde GmbH",
+            "email": "hello@syde.com",
+            "homepage": "https://syde.com",
+            "role": "Company"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "automattic/vipwpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/php-compatibility": "dev-develop",
+        "phpcsstandards/phpcsextra": "^1.2",
+        "phpcsstandards/phpcsutils": "^1.0",
+        "sirbrillig/phpcs-variable-analysis": "^2.11",
+        "slevomat/coding-standard": "^8.15",
+        "squizlabs/php_codesniffer": "^3.11",
+        "wp-coding-standards/wpcs": "^3.1"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.5"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "SydeCS\\Syde\\Helpers\\": "Syde/Helpers/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SydeCS\\Syde\\Tests\\": [
+                "tests/e2e/cases",
+                "tests/src/",
+                "tests/unit/cases"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/*": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php ./vendor/bin/phpunit -d max_execution_time=0"
+        ],
+        "cs": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php ./vendor/bin/phpcs"
+        ],
+        "qa": [
+            "@cs",
+            "@static-analysis",
+            "@tests"
+        ],
+        "static-analysis": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php ./vendor/bin/phpstan analyse --memory-limit=1G"
+        ],
+        "tests": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php ./vendor/bin/phpunit --no-coverage"
+        ]
+    }
+}

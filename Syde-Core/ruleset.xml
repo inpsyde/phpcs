@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+    name="Syde-Core"
+>
+
+    <description>The Syde-Core coding standard is a collection of minimum required rules for WordPress development at scale.</description>
+
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :: SYDE PHP CODING STANDARDS
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <rule ref="Syde.Classes.DeprecatedSerializableInterface" />
+    <rule ref="Syde.Classes.DeprecatedSerializeMagicMethod" />
+    <rule ref="Syde.WordPress.HookClosureReturn" />
+    <rule ref="Syde.WordPress.HookPriority" />
+
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :: THIRD-PARTY STANDARDS
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <!--
+    :: Generic (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="Generic.CodeAnalysis.AssignmentInCondition" />
+    <rule ref="Generic.PHP.BacktickOperator" />
+    <rule ref="Generic.PHP.Syntax" />
+    <rule ref="Generic.VersionControl.GitMergeConflict" />
+
+    <!--
+    :: PHPCompatibility (https://github.com/PHPCompatibility/PHPCompatibility/)
+    -->
+    <rule ref="PHPCompatibility" />
+
+    <!--
+    :: Squiz (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="Squiz.Functions.FunctionDuplicateArgument" />
+    <rule ref="Squiz.PHP.Eval" />
+    <rule ref="Squiz.PHP.NonExecutableCode" />
+
+    <!--
+    :: Universal (https://github.com/PHPCSStandards/PHPCSExtra/)
+    -->
+    <rule ref="Universal.Arrays.DuplicateArrayKey" />
+    <rule ref="Universal.Operators.StrictComparisons" />
+
+    <!--
+    :: WordPress (https://github.com/WordPress/WordPress-Coding-Standards/)
+    -->
+    <rule ref="WordPress.DateTime.CurrentTimeTimestamp" />
+    <rule ref="WordPress.DateTime.RestrictedFunctions">
+        <properties>
+            <property name="exclude" type="array">
+                <element value="date" />
+            </property>
+        </properties>
+    </rule>
+    <rule ref="WordPress.DB.PreparedSQL" />
+    <rule ref="WordPress.DB.PreparedSQLPlaceholders" />
+    <rule ref="WordPress.DB.RestrictedClasses" />
+    <rule ref="WordPress.DB.RestrictedFunctions" />
+    <rule ref="WordPress.PHP.NoSilencedErrors" />
+    <rule ref="WordPress.PHP.RestrictedPHPFunctions" />
+    <rule ref="WordPress.PHP.StrictInArray" />
+    <rule ref="WordPress.Security.EscapeOutput" />
+    <rule ref="WordPress.Security.NonceVerification" />
+    <rule ref="WordPress.Security.ValidatedSanitizedInput" />
+    <rule ref="WordPress.WP.DeprecatedClasses" />
+    <rule ref="WordPress.WP.DeprecatedFunctions" />
+    <rule ref="WordPress.WP.DeprecatedParameters" />
+    <rule ref="WordPress.WP.DeprecatedParameterValues" />
+    <rule ref="WordPress.WP.DiscouragedConstants" />
+    <rule ref="WordPress.WP.DiscouragedFunctions" />
+
+    <!--
+    :: WordPress VIP (https://github.com/Automattic/VIP-Coding-Standards/)
+    -->
+    <rule ref="WordPressVIPMinimum.Hooks.AlwaysReturnInFilter" />
+    <rule ref="WordPressVIPMinimum.Hooks.PreGetPosts" />
+    <rule ref="WordPressVIPMinimum.Performance.RegexpCompare" />
+    <rule ref="WordPressVIPMinimum.Security.EscapingVoidReturnFunctions" />
+    <rule ref="WordPressVIPMinimum.Security.ExitAfterRedirect" />
+    <rule ref="WordPressVIPMinimum.Security.PHPFilterFunctions" />
+    <rule ref="WordPressVIPMinimum.Security.ProperEscapingFunction" />
+    <rule ref="WordPressVIPMinimum.Security.StaticStrreplace" />
+
+</ruleset>

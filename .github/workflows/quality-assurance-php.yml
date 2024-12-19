@@ -1,0 +1,71 @@
+name: PHP Quality Assurance
+
+on:
+    pull_request:
+        paths:
+            - 'Syde/**'
+            - 'tests/**'
+            - '**ruleset.xml'
+            - '.github/workflows/quality-assurance-php.yml'
+            - 'composer.json'
+            - 'phpcs.xml'
+            - 'phpstan.neon.dist'
+            - 'phpunit.xml.dist'
+    workflow_dispatch:
+        inputs:
+            jobs:
+                required: true
+                type: choice
+                default: 'Run all'
+                description: 'Choose jobs to run'
+                options:
+                    - 'Run all'
+                    - 'Run lint only'
+                    - 'Run PHPCS only'
+                    - 'Run PHPStan only'
+                    - 'Run static analysis'
+                    - 'Run unit tests only'
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint-php:
+        if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run lint only') || (github.event.inputs.jobs == 'Run static analysis')) }}
+        uses: inpsyde/reusable-workflows/.github/workflows/lint-php.yml@main
+        strategy:
+            matrix:
+                php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        with:
+            PHP_VERSION: ${{ matrix.php-version }}
+            LINT_ARGS: '-e php --colors --show-deprecated ./Syde ./tests --exclude ./tests/unit/fixtures/return-type-declaration.php'
+
+    coding-standards-analysis-php:
+        if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run PHPCS only') || (github.event.inputs.jobs == 'Run static analysis')) }}
+        uses: inpsyde/reusable-workflows/.github/workflows/coding-standards-php.yml@main
+        strategy:
+            matrix:
+                php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        with:
+            PHP_VERSION: ${{ matrix.php-version }}
+
+    static-code-analysis-php:
+        if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run PHPStan only') || (github.event.inputs.jobs == 'Run static analysis')) }}
+        # TODO: Replace with public Syde static-analysis-php reusable workflow as soon as PHPStan support is added.
+        uses: ./.github/workflows/_phpstan.yml
+        strategy:
+            matrix:
+                php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        with:
+            PHP_VERSION: ${{ matrix.php-version }}
+
+    tests-unit-php:
+        if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run unit tests only')) }}
+        uses: inpsyde/reusable-workflows/.github/workflows/tests-unit-php.yml@main
+        strategy:
+            matrix:
+                php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        with:
+            PHP_VERSION: ${{ matrix.php-version }}
+            PHPUNIT_ARGS: '--no-coverage'

@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+    name="Syde-Extra"
+>
+
+    <description>The Syde-Extra coding standard builds on the Syde-Core coding standard. It includes additional opinionated rules specific to formatting and other preferred coding practices at Syde.</description>
+
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :: SYDE PHP CODING STANDARDS
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <rule ref="Syde-Core" />
+    <rule ref="Syde.Classes.DisallowGetterSetter" />
+    <rule ref="Syde.Classes.PropertyLimit" />
+    <rule ref="Syde.ControlStructures.DisallowElse" />
+    <rule ref="Syde.Encoding.Utf8EncodingComment" />
+    <rule ref="Syde.Files.LineLength" />
+    <rule ref="Syde.Functions.ArgumentTypeDeclaration" />
+    <rule ref="Syde.Functions.DisallowCallUserFunc" />
+    <rule ref="Syde.Functions.DisallowGlobalFunction" />
+    <rule ref="Syde.Functions.FunctionBodyStart" />
+    <rule ref="Syde.Functions.FunctionLength" />
+    <rule ref="Syde.Functions.ReturnTypeDeclaration" />
+    <rule ref="Syde.Functions.StaticClosure" />
+    <rule ref="Syde.NamingConventions.ElementNameMinimalLength" />
+    <rule ref="Syde.NamingConventions.VariableName" />
+    <rule ref="Syde.PHP.DisallowShortOpenTag" />
+    <rule ref="Syde.PHP.DisallowTopLevelDefine" />
+
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :: THIRD-PARTY STANDARDS
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <!--
+    :: Generic (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax">
+        <type>warning</type>
+    </rule>
+    <rule ref="Generic.CodeAnalysis.EmptyPHPStatement" />
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement" />
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+    <rule ref="Generic.Files.ByteOrderMark" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="Generic.Files.OneClassPerFile" />
+    <rule ref="Generic.Files.OneInterfacePerFile" />
+    <rule ref="Generic.Files.OneObjectStructurePerFile" />
+    <rule ref="Generic.Files.OneTraitPerFile" />
+    <rule ref="Generic.Formatting.DisallowMultipleStatements" />
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+    <rule ref="Generic.Formatting.SpaceAfterNot">
+        <properties>
+            <property name="spacing" value="0" />
+        </properties>
+    </rule>
+    <rule ref="Generic.Functions.CallTimePassByReference" />
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+    <rule ref="Generic.NamingConventions.ConstructorName" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag" />
+    <rule ref="Generic.PHP.DisallowAlternativePHPTags" />
+    <rule ref="Generic.PHP.DisallowShortOpenTag" />
+    <rule ref="Generic.PHP.DiscourageGoto" />
+    <rule ref="Generic.PHP.LowerCaseConstant" />
+    <rule ref="Generic.PHP.LowerCaseKeyword" />
+    <rule ref="Generic.PHP.LowerCaseType" />
+    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
+        <type>warning</type>
+        <properties>
+            <property name="ignoreNewlines" type="boolean" value="yes" />
+        </properties>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing" />
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing" />
+    <rule ref="Generic.WhiteSpace.ScopeIndent" />
+    <rule ref="Generic.WhiteSpace.SpreadOperatorSpacingAfter" />
+
+    <!--
+    :: Modernize (https://github.com/PHPCSStandards/PHPCSExtra/)
+    -->
+    <rule ref="Modernize.FunctionCalls.Dirname" />
+
+    <!--
+    :: NormalizedArrays (https://github.com/PHPCSStandards/PHPCSExtra/)
+    -->
+    <rule ref="NormalizedArrays.Arrays.CommaAfterLast" />
+
+    <!--
+    :: PEAR (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="PEAR.Functions.ValidDefaultValue" />
+
+    <!--
+    :: PSR1 (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="PSR1.Classes.ClassDeclaration" />
+    <rule ref="PSR1.Files.SideEffects" />
+    <rule ref="PSR1.Methods.CamelCapsMethodName" />
+
+    <!--
+    :: PSR2 (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="PSR2.Classes.ClassDeclaration" />
+    <rule ref="PSR2.Classes.PropertyDeclaration" />
+    <rule ref="PSR2.ControlStructures.ElseIfDeclaration" />
+    <rule ref="PSR2.ControlStructures.SwitchDeclaration" />
+    <rule ref="PSR2.Files.ClosingTag" />
+    <rule ref="PSR2.Files.EndFileNewline" />
+    <rule ref="PSR2.Methods.FunctionCallSignature" />
+    <rule ref="PSR2.Methods.FunctionClosingBrace" />
+    <rule ref="PSR2.Methods.MethodDeclaration" />
+
+    <!--
+    :: PSR12 (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength" />
+    </rule>
+    <rule ref="PSR12.Operators.OperatorSpacing.NoSpaceBefore">
+        <type>warning</type>
+    </rule>
+
+    <!--
+    :: Slevomat (https://github.com/slevomat/coding-standard/)
+    -->
+    <rule ref="SlevomatCodingStandard.Arrays.ArrayAccess" />
+    <rule ref="SlevomatCodingStandard.Arrays.SingleLineArrayWhitespace">
+        <type>warning</type>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility" />
+    <rule ref="SlevomatCodingStandard.Classes.ForbiddenPublicProperty" />
+    <rule ref="SlevomatCodingStandard.Classes.PropertyDeclaration" />
+    <rule ref="SlevomatCodingStandard.Complexity.Cognitive">
+        <properties>
+            <property name="errorThreshold" type="integer" value="21" />
+            <property name="warningThreshold" type="integer" value="16" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowTrailingMultiLineTernaryOperator" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly" />
+    <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName" />
+    <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration">
+        <type>warning</type>
+        <properties>
+            <property name="allowMultiLine" type="boolean" value="yes" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall" />
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse" />
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration" />
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" type="boolean" value="yes" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
+    <rule ref="SlevomatCodingStandard.Operators.NegationOperatorSpacing">
+        <properties>
+            <property name="spacesCount" type="integer" value="0" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast" />
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" type="integer" value="0" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
+    <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces">
+        <type>warning</type>
+        <properties>
+            <property name="ignoreSpacesInComment" type="boolean" value="yes" />
+        </properties>
+    </rule>
+
+    <!--
+    :: Squiz (https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+    -->
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing">
+        <type>warning</type>
+    </rule>
+    <rule ref="Squiz.Classes.ClassDeclaration" />
+    <rule ref="Squiz.Classes.ClassFileName" />
+    <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+    <rule ref="Squiz.Classes.SelfMemberReference" />
+    <rule ref="Squiz.Classes.ValidClassName" />
+    <rule ref="Squiz.ControlStructures.ControlSignature" />
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration" />
+    <rule ref="Squiz.Functions.FunctionDeclaration" />
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords" />
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+        <type>warning</type>
+    </rule>
+    <rule ref="Squiz.PHP.CommentedOutCode">
+        <properties>
+            <property name="maxPercentage" value="45" />
+        </properties>
+    </rule>
+    <rule ref="Squiz.PHP.InnerFunctions" />
+    <rule ref="Squiz.PHP.LowercasePHPFunctions" />
+    <rule ref="Squiz.Scope.MemberVarScope" />
+    <rule ref="Squiz.Scope.MethodScope" />
+    <rule ref="Squiz.Scope.StaticThisUsage" />
+    <rule ref="Squiz.WhiteSpace.CastSpacing" />
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing" />
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <type>warning</type>
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace" />
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+    <!--
+    :: Universal (https://github.com/PHPCSStandards/PHPCSExtra/)
+    -->
+    <rule ref="Universal.CodeAnalysis.NoEchoSprintf" />
+    <rule ref="Universal.Constants.UppercaseMagicConstants" />
+    <rule ref="Universal.Lists.DisallowLongListSyntax">
+        <type>warning</type>
+    </rule>
+    <rule ref="Universal.PHP.OneStatementInShortEchoTag" />
+    <rule ref="Universal.UseStatements.NoLeadingBackslash" />
+    <rule ref="Universal.UseStatements.NoUselessAliases" />
+    <rule ref="Universal.WhiteSpace.CommaSpacing" />
+    <rule ref="Universal.WhiteSpace.DisallowInlineTabs" />
+    <rule ref="Universal.WhiteSpace.PrecisionAlignment" />
+
+    <!--
+    :: Variable Analysis (https://github.com/sirbrillig/phpcs-variable-analysis/)
+    -->
+    <rule ref="VariableAnalysis">
+        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable" />
+    </rule>
+
+    <!--
+    :: WordPress (https://github.com/WordPress/WordPress-Coding-Standards/)
+    -->
+    <rule ref="WordPress.CodeAnalysis.AssignmentInTernaryCondition" />
+    <rule ref="WordPress.CodeAnalysis.EscapedNotTranslated" />
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals" />
+    <rule ref="WordPress.NamingConventions.ValidHookName">
+        <properties>
+            <property name="additionalWordDelimiters" value="-/." />
+        </properties>
+    </rule>
+    <rule ref="WordPress.NamingConventions.ValidPostTypeSlug" />
+    <rule ref="WordPress.PHP.DevelopmentFunctions" />
+    <rule ref="WordPress.PHP.DevelopmentFunctions.error_log">
+        <type>error</type>
+    </rule>
+    <rule ref="WordPress.PHP.DevelopmentFunctions.prevent_path_disclosure">
+        <type>error</type>
+    </rule>
+    <rule ref="WordPress.PHP.DiscouragedPHPFunctions">
+        <properties>
+            <property name="exclude" type="array">
+                <element value="obfuscation" />
+                <element value="serialize" />
+                <element value="urlencode" />
+            </property>
+        </properties>
+    </rule>
+    <rule ref="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration">
+        <type>error</type>
+    </rule>
+    <rule ref="WordPress.PHP.DontExtract" />
+    <rule ref="WordPress.PHP.IniSet" />
+    <rule ref="WordPress.PHP.POSIXFunctions" />
+    <rule ref="WordPress.PHP.PregQuoteDelimiter" />
+    <rule ref="WordPress.PHP.TypeCasts" />
+    <rule ref="WordPress.Security.PluginMenuSlug" />
+    <rule ref="WordPress.Security.SafeRedirect" />
+    <rule ref="WordPress.WP.AlternativeFunctions">
+        <properties>
+            <property name="exclude" type="array">
+                <element value="file_get_contents" />
+                <element value="file_system_read" />
+                <element value="json_encode" />
+                <element value="parse_url" />
+            </property>
+        </properties>
+    </rule>
+    <rule ref="WordPress.WP.CapitalPDangit" />
+    <rule ref="WordPress.WP.EnqueuedResourceParameters" />
+    <rule ref="WordPress.WP.EnqueuedResources" />
+    <rule ref="WordPress.WP.I18n" />
+
+    <!--
+    :: WordPress VIP (https://github.com/Automattic/VIP-Coding-Standards/)
+    -->
+    <rule ref="WordPressVIPMinimum.Classes.DeclarationCompatibility" />
+    <rule ref="WordPressVIPMinimum.Constants.ConstantString" />
+    <rule ref="WordPressVIPMinimum.Constants.RestrictedConstants" />
+    <rule ref="WordPressVIPMinimum.Files.IncludingNonPHPFile" />
+    <rule ref="WordPressVIPMinimum.Functions.CheckReturnValue" />
+    <rule ref="WordPressVIPMinimum.Functions.DynamicCalls" />
+    <rule ref="WordPressVIPMinimum.Functions.StripTags" />
+    <rule ref="WordPressVIPMinimum.Performance.CacheValueOverride" />
+    <rule ref="WordPressVIPMinimum.Performance.TaxonomyMetaInOptions" />
+
+</ruleset>

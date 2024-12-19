@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+    name="Syde-Templates"
+>
+
+    <description>The Syde-Templates coding standard is a collection of rules specific to PHP template files for WordPress projects.</description>
+
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :: SYDE PHP CODING STANDARDS
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <rule ref="Syde.ControlStructures.AlternativeSyntax" />
+    <rule ref="Syde.Formatting.TrailingSemicolon" />
+    <rule ref="Syde.PHP.ShortOpenTagWithEcho" />
+
+</ruleset>
