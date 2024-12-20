@@ -207,25 +207,25 @@ There are some exceptions:
 - WordPress hook callbacks;
 - select PHP methods: `seek`, `unserialize`.
  
-Via the `allowedMethodNames` property, you can overwrite the list of method names that allowed to bypass the argument type checks:
+Via the `allowedMethodNames` property, you can specify method names that are allowed to bypass the argument type checks:
 
 ```xml
 <rule ref="Syde.Functions.ArgumentTypeDeclaration">
     <properties>
         <property name="allowedMethodNames" type="array">
-            <element value="seek" />
+            <element value="process" />
         </property>
     </properties>
 </rule>
 ```
 
-You can also specify **additional** method names that are to be allowed:
+It is also possible to **overwrite** the list of default method names that are to bypass the checks. You can do this via the `defaultAllowedMethodNames` property:
 
 ```xml
 <rule ref="Syde.Functions.ArgumentTypeDeclaration">
     <properties>
-        <property name="additionalAllowedMethodNames" type="array">
-            <element value="process" />
+        <property name="defaultAllowedMethodNames" type="array">
+            <element value="seek" />
         </property>
     </properties>
 </rule>
@@ -344,26 +344,26 @@ There are some exceptions:
 
 Please note that we are fully aware that 100% strictly typed code in PHP is rarely possible, feel free to ignore/disable the rule when any alternative is worse.
 
-Via the `allowedMethodNames` property, you can overwrite the list of method names that allowed to bypass most of the return type checks:
+Via the `allowedMethodNames` property, you can specify method names that are allowed to bypass most of the return type checks:
 
 ```xml
 <rule ref="Syde.Functions.ReturnTypeDeclaration">
     <properties>
         <property name="allowedMethodNames" type="array">
-            <element value="getInnerIterator" />
-            <element value="getIterator" />
+          <element value="getAllowed" />
         </property>
     </properties>
 </rule>
 ```
 
-You can also specify **additional** method names that are to be allowed:
+It is also possible to **overwrite** the list of default method names that are to bypass the checks. You can do this via the `defaultAllowedMethodNames` property:
 
 ```xml
 <rule ref="Syde.Functions.ReturnTypeDeclaration">
     <properties>
-        <property name="additionalAllowedMethodNames" type="array">
-            <element value="getAllowed" />
+        <property name="defaultAllowedMethodNames" type="array">
+            <element value="getInnerIterator" />
+            <element value="getIterator" />
         </property>
     </properties>
 </rule>

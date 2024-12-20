@@ -18,10 +18,10 @@ use SydeCS\Syde\Helpers\Misc;
 final class ReturnTypeDeclarationSniff implements Sniff
 {
     /** @var list<string> */
-    public array $additionalAllowedMethodNames = [];
+    public array $allowedMethodNames = [];
 
     /** @var list<string> */
-    public array $allowedMethodNames = [
+    public array $defaultAllowedMethodNames = [
         'count',
         'current',
         'getChildren',
@@ -114,8 +114,8 @@ final class ReturnTypeDeclarationSniff implements Sniff
         static $allowedMethodNames;
         if (!is_array($allowedMethodNames)) {
             $allowedMethodNames = array_unique(array_merge(
+                $this->defaultAllowedMethodNames,
                 $this->allowedMethodNames,
-                $this->additionalAllowedMethodNames,
             ));
         }
 
