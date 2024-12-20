@@ -4,9 +4,9 @@ If you want to migrate from the Inpsyde PHP Coding Standards (version 1 or 2) to
 
 ## Standards
 
-The Inpsyde PHP Coding Standards were only available as `Inpsyde` and `Inpsyde-Templates`. The former is the full standard, including almost all custom rules, except for a few sniffs that are part of the newer `Inpsyde-Templates` standard.
+The Inpsyde PHP Coding Standards were only available as `Inpsyde` and `InpsydeTemplates`. The former is the full standard, including almost all custom rules, except for a few sniffs that are part of the newer `InpsydeTemplates` standard.
 
-If you are using `Inpsyde-Templates`, the new standard you want to use is `Syde-Templates`.
+If you are using `InpsydeTemplates`, the new standard you want to use is `Syde-Templates`.
 
 If you are using the full `Inpsyde` standard, you may want to start with the `Syde-Extra` standard, and adapt things as you see fit.
 
