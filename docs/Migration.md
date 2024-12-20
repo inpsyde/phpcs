@@ -10,7 +10,7 @@ If you are using `InpsydeTemplates`, the new standard you want to use is `Syde-T
 
 If you are using the full `Inpsyde` standard, you may want to start with the `Syde-Extra` standard, and adapt things as you see fit.
 
-If you were using the `Inpsyde` standard, but actually turned off a lot of the more opinionated sniffs, or if you have been cherry-picking sniffs without using the full standard, you may want to start with the new ´Syde-Core` standard, which only contains sniffs (custom and third-party!) that we consider **required** for a modern WordPress project at scale that considers performance, security and other hard best practices.
+If you were using the `Inpsyde` standard, but actually turned off a lot of the more opinionated sniffs, or if you have been cherry-picking sniffs without using the full standard, you may want to start with the new `Syde-Core` standard, which only contains sniffs (custom and third-party!) that we consider **required** for a modern WordPress project at scale that considers performance, security and other hard best practices.
 
 ## Sniff Names
 
