@@ -1,8 +1,7 @@
 [![Latest Stable Version](https://poser.pugx.org/syde/phpcs/v)](https://packagist.org/packages/syde/phpcs)
 [![License](https://poser.pugx.org/syde/phpcs/license)](https://github.com/inpsyde/phpcs/blob/HEAD/LICENSE)
-[![PHP Version Require](http://poser.pugx.org/syde/phpcs/require/php)](https://packagist.org/packages/syde/phpcs)
+[![PHP Version Require](https://poser.pugx.org/syde/phpcs/require/php)](https://packagist.org/packages/syde/phpcs)
 [![PHP Quality Assurance Status](https://github.com/inpsyde/phpcs/actions/workflows/quality-assurance-php.yml/badge.svg)](https://github.com/inpsyde/phpcs/actions/workflows/quality-assurance-php.yml)
-[![Coverage Status](https://coveralls.io/repos/github/inpsyde/phpcs/badge.svg)](https://coveralls.io/github/inpsyde/phpcs)
 
 # Syde PHP Coding Standards
 
