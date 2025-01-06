@@ -1,0 +1,9 @@
+name: Lint GitHub Actions Workflows
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint-workflows:
+    uses: inpsyde/reusable-workflows/.github/workflows/lint-workflows.yml@main
