@@ -52,8 +52,7 @@ jobs:
 
   static-code-analysis-php:
     if: ${{ (github.event_name != 'workflow_dispatch') || ((github.event.inputs.jobs == 'Run all') || (github.event.inputs.jobs == 'Run PHPStan only') || (github.event.inputs.jobs == 'Run static analysis')) }}
-    # TODO: Replace with public Syde static-analysis-php reusable workflow as soon as PHPStan support is added.
-    uses: ./.github/workflows/_phpstan.yml
+    uses: inpsyde/reusable-workflows/.github/workflows/static-analysis-php.yml@main
     strategy:
       matrix:
         php-version: [ '8.1', '8.2', '8.3', '8.4' ]
