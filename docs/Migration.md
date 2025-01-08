@@ -130,6 +130,9 @@ sed -i -f /path/to/phpcs.sed -- <INPUTFILE>
 sed -i -f /path/to/phpcs.sed -- $(grep -nrl -e 'Inpsyde.CodeQuality' -e 'InpsydeTemplates.Formatting' --exclude-dir="vendor" .)
 ```
 
+> [!TIP]
+> The command mentioned above may result in an error on a Mac. In most cases, the -i flag can be specified as an empty string (e.g. `sed -i ''`) to resolve the issue.
+
 The above command will first retrieve the list of files that include `Inpsyde.CodeQuality` or `InpsydeTemplates.Formatting`, ignoring the `vendor` directory, and then execute all substitution commands in the `phpcs.sed` file for each of the found files.
 
 As before, feel free to adapt the command as necessary. For example, if you want to start with the `src` folder only, pass `src` instead of `.` as last argument to the nested `grep` command.
