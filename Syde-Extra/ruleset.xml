@@ -153,9 +153,6 @@
             <property name="allowMultiLine" type="boolean" value="yes" />
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall" />
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse" />
-    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration" />
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
