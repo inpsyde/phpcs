@@ -51,7 +51,9 @@ The Syde PHP Coding Standards package requires:
 
 When installed for local development, these packages will be installed as well:
 
-- [PHPStan](https://github.com/phpstan/phpstan/) 2.0+
+- [PHPStan](https://github.com/phpstan/phpstan/) 2.1+
+- [PHPStan Deprecation Rules Extension](https://github.com/phpstan/phpstan-deprecation-rules) 2.0+
+- [PHPStan No-Private Extension](https://github.com/swissspidy/phpstan-no-private) 1.0+
 - [PHPUnit](https://github.com/sebastianbergmann/phpunit/) 10.5+
 
 ## Installation
