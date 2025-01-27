@@ -131,7 +131,7 @@ sed -i -f /path/to/phpcs.sed -- $(grep -nrl -e 'Inpsyde.CodeQuality' -e 'Inpsyde
 ```
 
 > [!TIP]
-> The command mentioned above may result in an error on a Mac. In most cases, the -i flag can be specified as an empty string (e.g. `sed -i ''`) to resolve the issue.
+> The above command may result in an error on a Mac. If this is the case for you, try passing an empty string as argument for the `-i` flag to prevent this error from happening (e.g., `sed -i '' ...`).
 
 The above command will first retrieve the list of files that include `Inpsyde.CodeQuality` or `InpsydeTemplates.Formatting`, ignoring the `vendor` directory, and then execute all substitution commands in the `phpcs.sed` file for each of the found files.
 
@@ -151,7 +151,7 @@ Wherever you were previously referencing the `Inpsyde` standard, you may want to
 
 If you are using `InpsydeTemplates`, this would now be `Syde-Templates`.
 
-### PHP_CodeSniffer Rulesets 
+### PHP_CodeSniffer Rulesets
 
 In addition to the changes to the rule names, there are also changes regarding sniff configuration.
 
@@ -163,12 +163,12 @@ The `Inpsyde.CodeQuality.Psr4` sniff has a public `array` property, `$psr4`, tha
 
 ```xml
 <rule ref="Inpsyde.CodeQuality.Psr4">
-	<properties>
-		<property name="psr4" type="array">
-			<element key="MyCompany\MyProject" value="src"/>
-			<element key="MyCompany\MyProject\Tests" value="tests/src|tests/e2e|tests/unit"/>
-		</property>
-	</properties>
+    <properties>
+        <property name="psr4" type="array">
+            <element key="MyCompany\MyProject" value="src"/>
+            <element key="MyCompany\MyProject\Tests" value="tests/src|tests/e2e|tests/unit"/>
+        </property>
+    </properties>
 </rule>
 ```
 
@@ -178,14 +178,14 @@ An example configuration that matches the above behavior looks like so:
 
 ```xml
 <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
-	<properties>
-		<property name="rootNamespaces" type="array">
-			<element key="src" value="MyCompany\MyProject" />
-			<element key="tests/src" value="MyCompany\MyProject\Tests" />
-			<element key="tests/e2e" value="MyCompany\MyProject\Tests" />
-			<element key="tests/unit" value="MyCompany\MyProject\Tests" />
-		</property>
-	</properties>
+    <properties>
+        <property name="rootNamespaces" type="array">
+            <element key="src" value="MyCompany\MyProject" />
+            <element key="tests/src" value="MyCompany\MyProject\Tests" />
+            <element key="tests/e2e" value="MyCompany\MyProject\Tests" />
+            <element key="tests/unit" value="MyCompany\MyProject\Tests" />
+        </property>
+    </properties>
 </rule>
 ```
 

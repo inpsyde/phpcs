@@ -206,7 +206,7 @@ There are some exceptions:
 - PHP native double underscore method;
 - WordPress hook callbacks;
 - select PHP methods: `seek`, `unserialize`.
- 
+
 Via the `allowedMethodNames` property, you can specify method names that are allowed to bypass the argument type checks:
 
 ```xml
@@ -283,7 +283,7 @@ This is optional, and you may want to move the curly brace up and add a blank li
 This sniff triggers an error if a function is longer than the maximum allowed length (default: 50 lines).
 
 By default, the following is ignored when counting lines:
- 
+
 - blank lines;
 - comments;
 - doc block **inside** function block.
