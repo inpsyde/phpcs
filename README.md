@@ -39,22 +39,22 @@ The Syde PHP Coding Standards package requires:
 
 - PHP 8.1+
 - [Composer](https://getcomposer.org/)
-- [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/) 3.11+
-- [PHP_CodeSniffer Standards Composer Installer Plugin](https://github.com/PHPCSStandards/composer-installer/) 1.0+
-- [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility/) 10+ (`dev-develop`)
-- [PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra/) 1.2+
-- [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils/) 1.0+
-- [Slevomat Coding Standard](https://github.com/slevomat/coding-standard/) 8.15
-- [VariableAnalysis](https://github.com/sirbrillig/phpcs-variable-analysis/) 2.11+
-- [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards/) 3.1+
-- [WordPress VIP Coding Standards](https://github.com/Automattic/VIP-Coding-Standards/) 3.0+
+- [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/)
+- [PHP_CodeSniffer Standards Composer Installer Plugin](https://github.com/PHPCSStandards/composer-installer/)
+- [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility/) (`dev-develop`)
+- [PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra/)
+- [PHPCSUtils](https://github.com/PHPCSStandards/PHPCSUtils/)
+- [Slevomat Coding Standard](https://github.com/slevomat/coding-standard/)
+- [VariableAnalysis](https://github.com/sirbrillig/phpcs-variable-analysis/)
+- [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards/)
+- [WordPress VIP Coding Standards](https://github.com/Automattic/VIP-Coding-Standards/)
 
 When installed for local development, these packages will be installed as well:
 
-- [PHPStan](https://github.com/phpstan/phpstan/) 2.1+
-- [PHPStan Deprecation Rules Extension](https://github.com/phpstan/phpstan-deprecation-rules) 2.0+
-- [PHPStan No-Private Extension](https://github.com/swissspidy/phpstan-no-private) 1.0+
-- [PHPUnit](https://github.com/sebastianbergmann/phpunit/) 10.5+
+- [PHPStan](https://github.com/phpstan/phpstan/)
+- [PHPStan Deprecation Rules Extension](https://github.com/phpstan/phpstan-deprecation-rules)
+- [PHPStan No-Private Extension](https://github.com/swissspidy/phpstan-no-private)
+- [PHPUnit](https://github.com/sebastianbergmann/phpunit/)
 
 ## Installation
 
@@ -128,6 +128,7 @@ A minimum working example could look like so:
 ```xml
 <?xml version="1.0"?>
 <ruleset>
+
     <!-- Minimum required Syde PHP Coding Standard rules. -->
     <rule ref="Syde-Core" />
 
@@ -150,6 +151,7 @@ Here is a real-world example including files and folders to check, as well as so
 ```xml
 <?xml version="1.0"?>
 <ruleset>
+
     <!-- Check for cross-version support for PHP 8.1 and higher. -->
     <config name="testVersion" value="8.1-" />
 
@@ -178,7 +180,7 @@ Here is a real-world example including files and folders to check, as well as so
 
     <!-- Do not report on function length for tests. -->
     <rule ref="Syde.Functions.FunctionLength">
-        <exclude-pattern>*/tests/cases/*</exclude-pattern>
+        <exclude-pattern>*/tests/*</exclude-pattern>
     </rule>
 
     <!-- PSR-4 namespace configuration. -->
@@ -186,8 +188,8 @@ Here is a real-world example including files and folders to check, as well as so
         <properties>
             <property name="rootNamespaces" type="array">
                 <element key="src" value="MyCompany\MyProject" />
-                <element key="tests/cases" value="MyCompany\MyProject\Tests" />
                 <element key="tests/src" value="MyCompany\MyProject\Tests" />
+                <element key="tests/unit" value="MyCompany\MyProject\Tests" />
             </property>
         </properties>
     </rule>
